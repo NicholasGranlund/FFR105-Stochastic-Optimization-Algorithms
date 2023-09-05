@@ -1,10 +1,10 @@
 function population = InitializePopulation(populationSize,numberOfGenes);
     % Name: Nicholas Granlund
-    % Date: 2022-04-14
-    % Description: This function instantiates a population given the population size and
-    % the number of parameters. The function returns a matrix with 
-    % rows=individuals and columns=genes. 
-    
-    population = rand(populationSize, numberOfGenes);
+    % Date: 2023-09-05
+    % Description: This function should take the population size and the
+    % number of genes as input, and should return the entire population
+    % as a matrix of binary numbers (i.e. as in the Matlab introduction).
+
+    population = randi([0 1], populationSize, numberOfGenes);
 
 end
