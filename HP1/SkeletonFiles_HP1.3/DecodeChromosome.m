@@ -1,4 +1,4 @@
-function x = DecodeChromosome(chromosome,numberOfVariables,maximumVariableValue);
+function x = DecodeChromosome(chromosome,numberOfVariables,maximumVariableValue)
     % Name: Nicholas Granlund
     % Date: 2023-09-05
     %
