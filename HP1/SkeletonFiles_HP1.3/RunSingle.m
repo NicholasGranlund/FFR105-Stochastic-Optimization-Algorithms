@@ -13,19 +13,8 @@ crossoverProbability = 0.8;        % Changes allowed (= pCross)
 mutationProbability = 0.02;        % Changes allowed. (Note: 0.02 <=> 1/numberOfGenes)
 numberOfGenerations = 2000;        % Changes allowed.
 
-
-population = InitializePopulation(populationSize,numberOfGenes)
-
-for i = 1:populationSize
-    chromosome = population(i,:);
-    x = DecodeChromosome(chromosome,numberOfVariables,maximumVariableValue);
-    fitnessList(i) = EvaluateIndividual(x);
-end
-
-selectedIndividualIndex = TournamentSelect(fitnessList, tournamentProbability, tournamentSize)
-
-%[maximumFitness, bestVariableValues] = RunFunctionOptimization(populationSize, numberOfGenes, numberOfVariables, maximumVariableValue, tournamentSize, ...
-%                                       tournamentProbability, crossoverProbability, mutationProbability, numberOfGenerations);
+[maximumFitness, bestVariableValues] = RunFunctionOptimization(populationSize, numberOfGenes, numberOfVariables, maximumVariableValue, tournamentSize, ...
+                                       tournamentProbability, crossoverProbability, mutationProbability, numberOfGenerations);
 
 sprintf('Fitness: %d, x(1): %0.10f, x(2): %0.10f', maximumFitness, bestVariableValues(1), bestVariableValues(2))
 

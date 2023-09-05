@@ -4,7 +4,7 @@ function selectedIndividualIndex = TournamentSelect(fitnessList, tournamentProba
     %
     
     % Randomly choose chromosomes
-    selectedChromosomeIndexes = randi([0, length(fitnessList)],1,tournamentSize);
+    selectedChromosomeIndexes = randi([1, length(fitnessList)],1,tournamentSize);
 
     r = rand();
     
