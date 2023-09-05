@@ -31,7 +31,5 @@ function x = DecodeChromosome(chromosome,numberOfVariables,maximumVariableValue)
         x(i) = -maximumVariableValue + 2*maximumVariableValue * x(i)/(1 - 2^(-k));
     end
 
-
-
 end
 
