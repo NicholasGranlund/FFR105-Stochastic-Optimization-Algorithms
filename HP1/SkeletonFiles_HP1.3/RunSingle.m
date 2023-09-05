@@ -17,6 +17,7 @@ numberOfGenerations = 2000;        % Changes allowed.
 population = InitializePopulation(populationSize,numberOfGenes)
 chromosome = population(:,1)
 x = DecodeChromosome(chromosome,numberOfVariables,maximumVariableValue)
+fitness = EvaluateIndividual(x)
 
 %[maximumFitness, bestVariableValues] = RunFunctionOptimization(populationSize, numberOfGenes, numberOfVariables, maximumVariableValue, tournamentSize, ...
 %                                       tournamentProbability, crossoverProbability, mutationProbability, numberOfGenerations);
