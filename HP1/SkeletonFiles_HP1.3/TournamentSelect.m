@@ -1,1 +1,4 @@
-function selectedIndividualIndex = TournamentSelect(fitnessList, tournamentProbability, tournamentSize);
+function selectedIndividualIndex = TournamentSelect(fitnessList, tournamentProbability, tournamentSize)
+
+
+end
