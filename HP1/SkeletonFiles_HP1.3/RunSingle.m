@@ -7,7 +7,7 @@ maximumVariableValue = 5;          % Do NOT change: (x_i in [-a,a], where a = ma
 numberOfGenes = 50;                % Do NOT change
 numberOfVariables = 2;  	       % Do NOT change
 
-tournamentSize = 2;                % Changes allowed
+tournamentSize = 3;                % Changes allowed
 tournamentProbability = 0.75;      % Changes allowed (= pTour)
 crossoverProbability = 0.8;        % Changes allowed (= pCross)
 mutationProbability = 0.02;        % Changes allowed. (Note: 0.02 <=> 1/numberOfGenes)
