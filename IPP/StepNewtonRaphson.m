@@ -3,16 +3,17 @@
 % clear error message should be given.
 
 function xNext = StepNewtonRaphson(x, fPrime, fDoublePrime)
+    % Function edited by Nicholas Granlund
+    % Date: 2023-09-07
 
     % Check if denominator is 0
     if fDoublePrime == 0
         xNext = NaN;
-        error('f prime prime equals 0')
+        error('f prime prime equals 0, terminating program')
+
+    % Else compute Newton-Raphson step
     else
-        % Compute Newton-Raphson step
         xNext = x - (fPrime / fDoublePrime);
     end
-
-    % return
 
 end

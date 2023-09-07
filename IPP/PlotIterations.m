@@ -2,6 +2,8 @@
 % using NewtonRaphsonStep (if any iterates were generated).
 
 function PlotIterations(polynomialCoefficients, iterationValues)
+    % Function edited by Nicholas Granlund
+    % Date: 2023-09-07
 
     % Create figure window
     figure()
@@ -12,6 +14,7 @@ function PlotIterations(polynomialCoefficients, iterationValues)
     iterationValuesMean = mean(iterationValues);
     iterationValuesStd = std(iterationValues);
 
+    % Create vector of x values in the suitable range
     xValues = linspace(iterationValuesMean - 3*iterationValuesStd, iterationValuesMean + 3*iterationValuesStd);
     
     % Initialize polynomeValues
@@ -28,14 +31,12 @@ function PlotIterations(polynomialCoefficients, iterationValues)
     % Initialize iterationPolynomeValues
     iterationPolynomeValues = [];
     
-    % Plot Newton-Raphsons
+    % Plot Newton-Raphson steps
     for i=1:length(iterationValues)
         iterationPolynomeValues(i) = GetPolynomialValue(iterationValues(i),polynomialCoefficients);
         plot(iterationValues(i), iterationPolynomeValues(i),'k-o','MarkerSize',10);
         hold on
     end
-
-    % return
 
 end
 

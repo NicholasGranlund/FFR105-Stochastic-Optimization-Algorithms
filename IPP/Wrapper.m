@@ -4,8 +4,12 @@
 % with many different polynomials to make sure that your
 % program can handle all cases.
 %
+close all
+clear all
+clc
 
 polynomialCoefficients = [10 -2 -1 1];
+%polynomialCoefficients = [10 -2 1 -1];
 startingPoint = 2;
 tolerance = 0.0001;
 iterationValues = RunNewtonRaphson(polynomialCoefficients, startingPoint, tolerance);

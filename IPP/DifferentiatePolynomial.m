@@ -2,6 +2,8 @@
 % the derivativeOrder) of the polynomial given by the polynomialCoefficients (see also GetPolynomialValue)
 
 function derivativeCoefficients = DifferentiatePolynomial(polynomialCoefficients, derivativeOrder)
+    % Function edited by Nicholas Granlund
+    % Date: 2023-09-07
 
     % Check if derivativeOrder is valid
     if derivativeOrder <= 0
@@ -11,7 +13,7 @@ function derivativeCoefficients = DifferentiatePolynomial(polynomialCoefficients
     % Check if n < 2
     n = length(polynomialCoefficients)-1;
     if n < 1
-        error('The polynomial must be 2 or larger')
+        error('The polynomial order must be 2 or larger')
     end
 
     % Initialize derivativeCoefficients
@@ -23,10 +25,11 @@ function derivativeCoefficients = DifferentiatePolynomial(polynomialCoefficients
             derivativeCoefficients(i) = polynomialCoefficients(i+1)*i;
         end
     else
-        polynomialCoefficients = DifferentiatePolynomial(polynomialCoefficients, derivativeOrder-1);
-        derivativeCoefficients = DifferentiatePolynomial(polynomialCoefficients, 1);
+        % Differentiate derivativOrder-1 to obtain the new polynomial coefficients
+        newPolynomialCoefficients = DifferentiatePolynomial(polynomialCoefficients, derivativeOrder-1);
+        
+        % Differentiate once to get the final derivativeCoefficients
+        derivativeCoefficients = DifferentiatePolynomial(newPolynomialCoefficients, 1);
     end
-
-    % return
         
 end

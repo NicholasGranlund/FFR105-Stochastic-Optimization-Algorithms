@@ -2,6 +2,8 @@
 % where a0, a1, ... are obtained from polynomialCoefficients.
 
 function value = GetPolynomialValue(x, polynomialCoefficients)
+    % Function edited by Nicholas Granlund
+    % Date: 2023-09-07
 
     % Initialize the variable value
     value = 0;
@@ -10,7 +12,5 @@ function value = GetPolynomialValue(x, polynomialCoefficients)
     for i=1:length(polynomialCoefficients)
         value = value + (polynomialCoefficients(i)*x^(i-1));
     end
-
-    % return
 
 end
