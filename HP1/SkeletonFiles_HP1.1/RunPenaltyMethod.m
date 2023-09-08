@@ -18,8 +18,8 @@ clc
 
 muValues = [1 10 100 1000];
 eta = 0.0001;
-xStart = [1;2];
-gradientTolerance = 1E-6;
+xStart = [1; 2];
+gradientTolerance = 1E-8;
 
 xValues = zeros(length(muValues), 2);
 for i = 1:length(muValues)

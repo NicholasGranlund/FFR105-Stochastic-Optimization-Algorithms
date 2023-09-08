@@ -20,7 +20,7 @@ function x = RunGradientDescent(xStart, mu, eta, gradientTolerance)
     end
 
 
-    % -------------------- PLOT --------------------
+    % ----------------------- PLOT -----------------------
     % Create a plot to show the solution trajectory
     figure()
     fplot(@(t) sin(t), @(t) cos(t), '--k');
@@ -35,17 +35,16 @@ function x = RunGradientDescent(xStart, mu, eta, gradientTolerance)
     %f = (X - 1).^2 + 2*(Y - 2).^2 + mu*(X^2 + Y^2 - 1)^2;
     
     % Create a contour plot
-    contour(X, Y, f);
+    contour(X, Y, f, 10);
     
     % Add labels and title
     xlabel('x_1');
     ylabel('x_2');
     title(['Penalty Method with Gradient descent. \mu = ', num2str(mu)]);
-    legend('Constraint x_1^2 + x_2^2 -1 < 0',...
+    legend('Constraint x_1^2 + x_2^2 -1 ≤ 0',...
         'Gradient Descent solution trajectory',...
         'Contour of f = (x_1 - 1)^2 + 2(x_2 - 2)^2')
-    % ----------------------------------------------
-
+    % ----------------------------------------------------
 
     % Return only the final step as solution
     x = x(:,end);
