@@ -16,7 +16,7 @@ close all
 clear all
 clc
 
-muValues = [1 10 100 1000];
+muValues = [0.1 1 10 100 1000 10000];
 eta = 0.0001;
 xStart = [1; 2];
 gradientTolerance = 1E-8;

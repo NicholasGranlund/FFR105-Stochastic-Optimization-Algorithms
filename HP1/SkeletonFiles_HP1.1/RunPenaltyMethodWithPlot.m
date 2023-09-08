@@ -16,7 +16,7 @@ close all
 clear all
 clc
 
-muValues = [1 10 100 1000];
+muValues = [0.1 1 10 100 1000];
 eta = 0.0001;
 xStart = [1; 2];
 gradientTolerance = 1E-6;
@@ -30,9 +30,10 @@ end
 
 % Plot the results
 figure()
-semilogx(muValues, x, 'LineWidth', 4);
+semilogx(muValues, x, 'LineWidth', 2);
 legend('x_1', 'x_2');
 xlabel('value of \mu')
 ylabel('value of x_1 and x_2');
+title('Optimal solution found as function of \mu')
 grid on
 
