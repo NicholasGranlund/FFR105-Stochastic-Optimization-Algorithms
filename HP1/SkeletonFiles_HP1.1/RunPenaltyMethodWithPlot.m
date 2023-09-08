@@ -18,12 +18,21 @@ clc
 
 muValues = [1 10 100 1000];
 eta = 0.0001;
-xStart = [1;2];
+xStart = [1; 2];
 gradientTolerance = 1E-6;
 
-xValues = zeros(length(muValues), 2);
 for i = 1:length(muValues)
- mu = muValues(i);
- x = RunGradientDescent(xStart,mu,eta,gradientTolerance);
- sprintf('x(1) = %3.4f, x(2) = %3.4f mu = %d',x(1),x(2),mu)
+    mu = muValues(i);
+    x(:,i) = RunGradientDescent(xStart,mu,eta,gradientTolerance);
+    sprintf('x(1) = %3f, x(2) = %3f mu = %d',x(1,i),x(2,i),mu)
 end
+
+
+% Plot the results
+figure()
+semilogx(muValues, x, 'LineWidth', 4);
+legend('x_1', 'x_2');
+xlabel('value of \mu')
+ylabel('value of x_1 and x_2');
+grid on
+
