@@ -5,7 +5,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 clear all;
+close all;
 clc;
+addpath('TSPgraphics/')
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Data
@@ -18,8 +21,8 @@ numberOfCities = length(cityLocation);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 numberOfAnts = 50;  %% Changes allowed
 alpha = 1.0;        %% Changes allowed
-beta = 3.0;         %% Changes allowed
-rho = 0.3;          %% Changes allowed
+beta = 7.0;         %% Changes allowed
+rho = 0.5;          %% Changes allowed
 tau0 = 0.1;         %% Changes allowed
 
 targetPathLength = 99.9999999; 
@@ -58,6 +61,9 @@ while (minimumPathLength > targetPathLength)
     minimumPathLength = pathLength;
     disp(sprintf('Iteration %d, ant %d: path length = %.5f',iIteration,k,minimumPathLength));
     PlotPath(connection,cityLocation,path);
+
+    % store the best path
+    bestPath = path;
   end
   pathCollection(k,:) = path;  
   pathLengthCollection(k) = pathLength; 
