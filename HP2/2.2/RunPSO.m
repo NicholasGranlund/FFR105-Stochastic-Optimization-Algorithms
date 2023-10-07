@@ -1,4 +1,5 @@
 %% Particle swarm optimization (PSO)
+%
 % By Nicholas Granlund
 % Date: Oct 2023
 
@@ -20,6 +21,7 @@ c2 = 2;
 inertiaWeight = 1.4;
 vMax = 3;
 tol = 1e-15;
+maxIterations = 10000;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -42,10 +44,10 @@ bestSwarmValue = GetFunctionValues(bestSwarmPosition);
 % Start counter
 counter = 0;
 
-
 % Run Particle Swarm Optimization until function value is below tol
 while bestSwarmValue > tol
 
+    % Increment counter
     counter = counter + 1;
 
     % 2. Get function values at particle position
@@ -77,7 +79,7 @@ while bestSwarmValue > tol
     inertiaWeight = max([inertiaWeight*beta, 0.4]);
 
     % 7. Check if PSO has run for an unusual long time
-    if counter == 10000
+    if counter == maxIterations
         fprintf('Terminating PSO, max iteration reached.')
         break
     end
