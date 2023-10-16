@@ -143,12 +143,12 @@ if __name__ == '__main__':
         fitness = get_fitness(decoded_chromosomes=decoded)                     # 2.2
 
         # 3. Form the next generation
-        parents = select_individuals(N, population, fitness)       # 3.1
+        parents = select_individuals(N, population, fitness)        # 3.1
         children = crossover(parents)                               # 3.2
         new_population = mutate(children)                           # 3.3
         population = new_population
 
-        # Calculate best fitness and chromosome
+        # 4. Calculate best fitness and chromosome
         max_fitness_idx = np.argmax(fitness)
         if fitness[max_fitness_idx] > best_fitness:
             best_fitness = fitness[max_fitness_idx]
